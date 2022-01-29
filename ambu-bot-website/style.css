@@ -7,8 +7,8 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://image.shutterstock.com/image-vector/medical-concept-hospital-building-doctor-260nw-588196298.jpg);
-    background-position: center;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(https://elements-cover-images-0.imgix.net/c5f0269f-d067-49fd-a7dc-101b467d60ac?auto=compress%2Cformat&fit=max&w=1370&s=38c4cf3d573670ddadec90064f1f0ac7);
+    background-position: center;z
     background-size: cover;
     position: relative;
 }

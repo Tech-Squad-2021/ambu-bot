@@ -12,14 +12,7 @@ function hideMenu(){
 
 var counter = document.querySelector(".counter");
 
-let count = 1;
 
-setInterval(() => {
-    if(count < 100000){
-        count++;
-    counter.innerHTML = count
-    }
-}, 1000)
 
 
 fetch("AIzaSyAJ16M03Q0vdQZq9LxOSmfErmai-MgcOKk")
