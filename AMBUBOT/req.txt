@@ -1,0 +1,5 @@
+urllib3
+beautifulsoup4 
+twilio
+flask
+python-dotenv

@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+TWILIO_ACCOUNT_SID = "ENTER YOUR TWILIO ACCOUNT SID HERE"
+TWILIO_AUTH_TOKEN  = "ENTER YOUR TWILIO AUTH TOKEN HERE"
+=======
+TWILIO_ACCOUNT_SID = "add_your_credentials"
+TWILIO_AUTH_TOKEN  = "add_your_credentials"
+>>>>>>> a062982 (Update config.py)
