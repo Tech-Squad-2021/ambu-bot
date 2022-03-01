@@ -52,3 +52,47 @@ location = "Kolkata"
 	
 url = "https://www.justdial.com/{}/24-Hours-Ambulance-Services/nct-10000352/page-{}".format(location, page_number)
 
+def getData(service_count, location):
+    req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
+    page = urllib.request.urlopen( req )
+
+    soup = BeautifulSoup(page.read(), "html.parser")
+    services = soup.find_all('li', {'class': 'cntanr'})
+
+    services_db = {}
+
+    try:
+
+        # Iterate through the 10 results in the page
+        for idx, service_html in enumerate(services):
+
+            # Parse HTML to fetch data
+            dict_service = {}
+            name = get_name(service_html)
+            phone = get_phone_number(service_html)
+            rating = get_rating(service_html)
+            count = get_rating_count(service_html)
+            address = get_address(service_html)
+            location = get_location(service_html)
+            if name != None:
+                dict_service['Name'] = name
+            if phone != None:
+                print('getting phone number')
+                dict_service['Phone'] = phone
+            if rating != None:
+                dict_service['Rating'] = rating
+            if count != None:
+                dict_service['Rating Count'] = count
+            if address != None:
+                dict_service['Address'] = address
+            if location != None:
+                dict_service['Address'] = location
+
+            services_db[idx+1] = dict_service
+
+            if idx+1 == service_count:
+                return services_db
+    except:
+        return "Error!"
+
+# print(getData(3, location))
