@@ -24,6 +24,8 @@ Before that, please send me you current location.
 e.g. type "Kolkata" and Press the Send Button
 """.format(ambulance, medical)
 
+app = Flask(__name__)
+
 # helper function
 def send_msg(sender_number, reciever_number, message):
     client.messages.create(
@@ -32,7 +34,6 @@ def send_msg(sender_number, reciever_number, message):
         body=message,
     )
     return ('', 200)
-
 
 @app.route('/', methods=['POST'])
 def AmbuBot():
@@ -50,7 +51,7 @@ def AmbuBot():
         send_msg(reciever_number, sender_number, 'Location?')
         print(msg_body, 'OK')
 
-    if msg_body in CITIES:
+    if msg_body in CITIES:        
         data = scrapper.getData(3, msg_body)
         send_msg(reciever_number, sender_number, str(data))
 

@@ -48,11 +48,8 @@ service_count = 1
 
 fields = ['Name', 'Phone', 'Rating', 'Rating Count', 'Address', 'Location']
 
-location = "Kolkata"
-	
-url = "https://www.justdial.com/{}/24-Hours-Ambulance-Services/nct-10000352/page-{}".format(location, page_number)
-
 def getData(service_count, location):
+    url = "https://www.justdial.com/{}/24-Hours-Ambulance-Services/nct-10000352/page-{}".format(location, page_number)
     req = urllib.request.Request(url, headers={'User-Agent' : "Magic Browser"}) 
     page = urllib.request.urlopen( req )
 
@@ -95,4 +92,6 @@ def getData(service_count, location):
     except:
         return "Error!"
 
+
+# TEST 1
 # print(getData(3, location))
